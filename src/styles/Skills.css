@@ -1,0 +1,62 @@
+.skills {
+  text-align: center;
+  padding: 20px;
+}
+
+.skills div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skills .skill-item {
+  text-align: center;
+  color: white;
+  flex: 1; /* Memastikan item skill dapat tumbuh atau menyusut */
+  min-width: 150px; /* Menetapkan lebar minimum untuk item skill */
+}
+
+.skills .skill-item i {
+  display: block;
+  font-size: 5rem; /* Ukuran ikon */
+  margin-bottom: 10px; /* Jarak antara ikon dan teks */
+}
+
+.skills .skill-item p {
+  margin: 0;
+  font-size: 1rem; /* Ukuran font untuk teks */
+  color: white;
+}
+
+.skills h2 {
+  color: rgb(255, 255, 83);
+}
+
+/* Media Queries */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .skills .skill-item i {
+    font-size: 4rem; /* Menyesuaikan ukuran ikon untuk tablet */
+  }
+
+  .skills .skill-item p {
+    font-size: 0.9rem; /* Menyesuaikan ukuran font untuk teks pada tablet */
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .skills .skill-item {
+    min-width: 120px; /* Menyesuaikan lebar minimum untuk item skill pada ponsel */
+  }
+
+  .skills .skill-item i {
+    font-size: 3rem; /* Menyesuaikan ukuran ikon untuk ponsel */
+  }
+
+  .skills .skill-item p {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font untuk teks pada ponsel */
+  }
+}

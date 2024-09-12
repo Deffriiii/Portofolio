@@ -1,0 +1,107 @@
+.projects {
+  padding: 50px;
+  color: rgb(255, 251, 0);
+  text-align: center;
+  margin-top: 3%;
+  background-image: url('../assets/images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: auto; /* Menambahkan scrollbar horizontal jika diperlukan */
+}
+
+.project-list {
+  display: flex;
+  justify-content: center; /* Atur penataan ke kiri untuk fleksibilitas */
+  gap: 30px;
+  flex-wrap: nowrap; /* Menghindari pembungkusan elemen ke baris berikutnya */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.project-item {
+  background: #000000;
+  text-shadow: yellow;
+  color: white;
+  padding: 20px;
+  width: 300px; /* Menyesuaikan lebar item proyek */
+  border-radius: 8px;
+  text-align: center;
+  flex: 0 0 auto; /* Menghindari item menyusut */
+
+}
+
+.project-image {
+  width: 100%; /* Mengatur lebar gambar agar mengikuti lebar item proyek */
+  height: auto;
+  border-radius: 4px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #0056b3;
+}
+
+.project-item p {
+  text-align: left;
+  margin: 10px 0;
+}
+
+/* Tombol 'Lihat Selengkapnya' */
+.show-more-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .projects {
+    padding: 30px;
+  }
+
+  .project-item {
+    width: 300px;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .projects {
+    padding: 20px;
+    margin-top: 5%;
+  }
+
+  .project-list {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom pada ponsel */
+    align-items: center; /* Menyelaraskan item ke tengah */
+  }
+
+  .project-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

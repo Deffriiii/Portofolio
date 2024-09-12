@@ -1,0 +1,115 @@
+.about {
+  height: 100vh;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between; /* Membuat jarak antara gambar dan teks */
+  align-items: center;
+  color: white;
+  padding: 0 50px;
+}
+
+.about .about-text {
+  flex: 1;
+  padding-right: 50px; /* Jarak antara teks dan animasi */
+  height: 400px;
+}
+
+.about-text p {
+  text-align: justify;
+}
+
+.about-text h1 {
+  color: rgb(255, 255, 83);
+}
+
+/* Menggunakan ukuran fleksibel untuk animasi */
+.container {
+  flex: 1;
+  width: 25vw; /* Memperbesar ukuran animasi dengan proporsi viewport */
+  height: 50vh; /* Memperbesar ukuran animasi dengan proporsi viewport */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    translate: 0px 36px;
+  }
+  50% {
+    translate: 0px 46px;
+  }
+}
+
+@keyframes bounce2 {
+  0%, 100% {
+    translate: 0px 46px;
+  }
+  50% {
+    translate: 0px 56px;
+  }
+}
+
+@keyframes umbral {
+  0% {
+    stop-color: #d3a5102e;
+  }
+  50% {
+    stop-color: rgba(211, 165, 16, 0.519);
+  }
+  100% {
+    stop-color: #d3a5102e;
+  }
+}
+
+#particles {
+  animation: particles 4s ease-in-out infinite;
+}
+
+#bounce {
+  animation: bounce 4s ease-in-out infinite;
+}
+
+#bounce2 {
+  animation: bounce2 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Media Queries */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .about .about-text {
+    padding-right: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Ukuran animasi lebih kecil untuk tablet */
+  .container {
+    width: 40vw;
+    height: 40vh;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .about {
+    padding: 10px;
+  }
+
+  .about .about-text {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Ukuran animasi lebih kecil untuk HP */
+  .container {
+    width: 60vw; /* Ukuran animasi lebih kecil */
+    height: 30vh;
+  }
+}

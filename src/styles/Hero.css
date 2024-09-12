@@ -1,0 +1,141 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background-color: #a9a9a9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+  background-image: url('../assets/images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1,
+.hero-content p {
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 1%;
+  color: rgb(255, 255, 83);
+  animation: typing 4s steps(40, end) 0s 1 normal both, blink-caret 0.75s step-end infinite;
+}
+
+.hero-content p {
+  font-size: 25px;
+  text-align: center;
+  animation: typing 4s steps(30, end) 4s 1 normal both, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+/* Social links styling */
+.social-links {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links a {
+  text-decoration: none;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  stroke: rgb(255, 255, 83);
+  transition: filter 0.3s ease, stroke 0.3s ease;
+}
+
+.social-links a:hover .social-icon {
+  stroke: #ffcc00;
+  filter: brightness(1.2);
+}
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    padding-left: 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+  }
+
+  .social-links {
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 20px;
+    height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .social-links {
+    right: 10px;
+  }
+}
