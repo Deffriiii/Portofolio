@@ -86,12 +86,12 @@
 .social-icon {
   width: 28px;
   height: 28px;
-  stroke: rgb(255, 255, 83);
+  stroke: white;
   transition: filter 0.3s ease, stroke 0.3s ease;
 }
 
 .social-links a:hover .social-icon {
-  stroke: #ffcc00;
+  stroke: rgb(255, 255, 83);
   filter: brightness(1.2);
 }
 
@@ -123,19 +123,19 @@
 
 @media (max-width: 767px) {
   .hero {
-    padding: 20px;
+    padding: 150px;
     height: auto;
   }
 
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .hero-content p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .social-links {
-    right: 10px;
+    right: 5px;
   }
 }

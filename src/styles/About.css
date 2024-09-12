@@ -25,8 +25,8 @@
 /* Menggunakan ukuran fleksibel untuk animasi */
 .container {
   flex: 1;
-  width: 25vw; /* Memperbesar ukuran animasi dengan proporsi viewport */
-  height: 50vh; /* Memperbesar ukuran animasi dengan proporsi viewport */
+  width: 40vw; /* Memperbesar ukuran animasi dengan proporsi viewport */
+  height: 125vh; /* Memperbesar ukuran animasi dengan proporsi viewport */
 }
 
 @keyframes bounce {
@@ -99,7 +99,7 @@
 /* Mobile (up to 767px) */
 @media (max-width: 767px) {
   .about {
-    padding: 10px;
+    padding: 20px;
   }
 
   .about .about-text {
@@ -109,7 +109,7 @@
 
   /* Ukuran animasi lebih kecil untuk HP */
   .container {
-    width: 60vw; /* Ukuran animasi lebih kecil */
+    width: 100vw; /* Ukuran animasi lebih kecil */
     height: 30vh;
   }
 }
