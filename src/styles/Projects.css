@@ -33,10 +33,15 @@
 
 }
 
-.project-image {
-  width: 100%; /* Mengatur lebar gambar agar mengikuti lebar item proyek */
+.slick-slide img {
+  width: 100%; /* Buat gambar slider memenuhi container */
   height: auto;
-  border-radius: 4px;
+}
+
+.project-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .project-link {

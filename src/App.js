@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
