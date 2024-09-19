@@ -1,7 +1,12 @@
+body {
+  overflow-x: hidden;
+}
+
 .projects {
   padding: 50px;
   color: rgb(255, 251, 0);
   text-align: center;
+  overflow-x: hidden; /* Menghindari scroll horizontal dalam section ini */
   margin-top: 3%;
   background-image: url('../assets/images/background.jpg');
   background-position: center;
@@ -30,7 +35,11 @@
   border-radius: 8px;
   text-align: center;
   flex: 0 0 auto; /* Menghindari item menyusut */
+  transition: transform 0.3s ease; /* Menambahkan transisi untuk animasi smooth */
+}
 
+.project-item:hover {
+  transform: scale(1.1); /* Membesarkan elemen saat di-hover */
 }
 
 .slick-slide img {
@@ -62,6 +71,7 @@
 .project-item p {
   text-align: left;
   margin: 10px 0;
+
 }
 
 /* Tombol 'Lihat Selengkapnya' */
@@ -91,6 +101,10 @@
   .project-item {
     width: 300px;
   }
+
+  .project-image {
+    max-width: 90%; /* Sesuaikan ukuran gambar dengan lebar container pada tablet */
+  }
 }
 
 /* Mobile (up to 767px) */
@@ -101,12 +115,17 @@
   }
 
   .project-list {
-    flex-direction: column; /* Mengubah arah flex menjadi kolom pada ponsel */
-    align-items: center; /* Menyelaraskan item ke tengah */
+    flex-direction: column;
+    align-items: center;
   }
 
   .project-item {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .project-image {
+    max-width: 100%; /* Pastikan gambar menyesuaikan dengan lebar container pada ponsel */
   }
 }
+

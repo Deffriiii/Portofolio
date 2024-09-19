@@ -78,28 +78,28 @@ Selain pencarian, AnimeFinder juga menampilkan daftar anime populer dan rekomend
 
         {/* Proyek Kedua */}
         <li className="project-item">
-          <h3>Aplikasi Pengelola Tugas</h3>
+          <h3>Anime Finder</h3>
 
           {/* Slider untuk proyek kedua */}
           <Slider {...sliderSettings}>
             <div>
               <img 
                 src={website2} 
-                alt="Aplikasi Pengelola Tugas - Gambar 1" 
+                alt="Anime Finder - Gambar 1" 
                 className="project-image"
               />
             </div>
             <div>
               <img 
                 src={website2_1} 
-                alt="Aplikasi Pengelola Tugas - Gambar 2" 
+                alt="Anime Finder - Gambar 2" 
                 className="project-image"
               />
             </div>
             <div>
               <img 
                 src={website2_2} 
-                alt="Aplikasi Pengelola Tugas - Gambar 3" 
+                alt="Anime Finder - Gambar 3" 
                 className="project-image"
               />
             </div>

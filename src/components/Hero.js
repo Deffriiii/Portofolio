@@ -12,6 +12,9 @@ const Hero = () => {
       <div className="hero-content">
         <h1>Defri Prasetyo</h1>
         <p>Junior Front-end Developer</p>
+        <a href="/CV_Defri_Prasetyo.pdf" download className="download-btn">
+          Download CV
+        </a>
       </div>
       <div className="social-links">
         <a href="https://www.linkedin.com/in/defriprasetyo/" target="_blank" rel="noopener noreferrer">
