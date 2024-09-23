@@ -10,7 +10,6 @@
   align-items: left;
   padding-left: 50px;
   background-image: url('../assets/images/background.jpg');
-  /* background-position: center; */
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -31,7 +30,7 @@
   padding-left: 0;
   margin-left: 0;
   overflow: hidden;
-  animation: typing 1s steps(40, end), blink-caret 0.10s step-end infinite;
+  animation: typing 2s steps(40, end), blink-caret 1s step-end infinite;
 }
 
 .hero-content h1 {
@@ -89,13 +88,13 @@
 .social-icon {
   width: 28px;
   height: 28px;
-  stroke: white;
+  stroke: rgb(186, 186, 0);
   transition: filter 0.3s ease, stroke 0.3s ease;
 }
 
 .social-links a:hover .social-icon {
-  stroke: rgb(255, 255, 83);
-  filter: brightness(1.2);
+  stroke: #fff;
+  filter: brightness(2);
 }
 
 /* Tambahkan gaya untuk tombol download CV */
@@ -142,39 +141,62 @@
 
 @media (max-width: 767px) {
   .hero {
+    position: relative; /* Tambahkan untuk memastikan overlay mengikuti elemen hero */
     padding: 45px 10px;
-    height: auto;
+    min-height: 50vh;
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start; /* Agar konten berada di bagian atas dan kiri */
+    align-items: flex-start;
   }
-
+  
+  /* Overlay untuk bagian kanan */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%; /* Overlay hanya bagian kanan */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Gradien dari hitam ke transparan */
+    z-index: 1; /* Pastikan overlay berada di atas background tapi di bawah konten */
+  }
+  
+  /* Konten tetap di atas overlay */
   .hero-content {
     text-align: left;
     max-width: 100%; 
-    margin-left: 0; /* Pastikan tidak ada margin di kiri */
-    padding-left: 0; /* Hilangkan padding di kiri */
+    margin-left: 0; 
+    padding-left: 0;
     margin-bottom: 20%;
+    position: relative; /* Pastikan konten berada di atas overlay */
+    z-index: 2; /* Lebih tinggi dari overlay */
   }
-
+  
   .hero-content h1 {
     font-size: 20px;
-    margin-left: 0; /* Pastikan judul menempel ke kiri */
-    
+    margin-left: 0;
   }
-
+  
   .hero-content p {
     font-size: 15px;
-    padding-left: 10px; /* Hilangkan padding di kiri */
-    margin-left: 0; /* Pastikan tidak ada margin di kiri */
+    padding-left: 10px;
+    margin-left: 0;
   }
-
+  
+  /* Social links tetap di atas overlay */
   .social-links {
+    position: absolute;
+    top: 50%; 
     right: 5px;
     padding-right: 10px;
+    transform: translateY(-50%);
+    z-index: 3; /* Lebih tinggi dari overlay dan konten */
   }
-
+  
   .download-btn {
     margin-left: 20px;
   }
+  
 }

@@ -48,7 +48,7 @@ body {
 }
 
 .project-image {
-  max-width: 100%;
+  max-width: 80%; /* Atur agar gambar tidak lebih dari 80% dari lebar item proyek */
   height: auto;
   border-radius: 5px;
 }
@@ -99,11 +99,11 @@ body {
   }
 
   .project-item {
-    width: 300px;
+    width: 300px; /* Ukuran tetap pada tablet */
   }
 
   .project-image {
-    max-width: 90%; /* Sesuaikan ukuran gambar dengan lebar container pada tablet */
+    max-width: 70%; /* Sesuaikan ukuran gambar dengan lebar container pada tablet */
   }
 }
 
@@ -112,6 +112,8 @@ body {
   .projects {
     padding: 20px;
     margin-top: 5%;
+    min-height: 50vh;
+    background-size: contain; /* Gambar latar belakang disesuaikan untuk ponsel */
   }
 
   .project-list {
@@ -120,12 +122,11 @@ body {
   }
 
   .project-item {
-    width: 100%;
+    width: 85%; /* Memastikan item proyek tidak terlalu lebar */
     margin-bottom: 10px;
   }
 
   .project-image {
-    max-width: 100%; /* Pastikan gambar menyesuaikan dengan lebar container pada ponsel */
+    max-width: 90%; /* Pastikan gambar menyesuaikan dengan lebar container pada ponsel */
   }
 }
-
