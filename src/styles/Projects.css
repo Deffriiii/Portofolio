@@ -47,26 +47,40 @@ body {
   height: auto;
 }
 
+.project-link,
+.show-more-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px; /* Menambah padding untuk tampilan yang lebih baik */
+  background-color: yellow; /* Mengubah warna latar belakang menjadi kuning */
+  color: #000; /* Mengubah warna teks menjadi hitam untuk kontras */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Menambahkan transisi untuk efek hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan untuk efek kedalaman */
+  font-size: 0.8rem; /* Menyusun ukuran font agar konsisten */
+}
+
+/* Efek hover untuk kedua tombol */
+.project-link:hover,
+.show-more-button:hover {
+  background-color: #ffcc00; /* Warna kuning lebih cerah saat di-hover */
+  transform: translateY(-3px); /* Menggeser tombol sedikit ke atas saat di-hover */
+}
+
+/* Efek aktif saat ditekan untuk kedua tombol */
+.project-link:active,
+.show-more-button:active {
+  transform: translateY(1px); /* Efek penekanan tombol */
+}
+
+
 .project-image {
   max-width: 80%; /* Atur agar gambar tidak lebih dari 80% dari lebar item proyek */
   height: auto;
   border-radius: 5px;
 }
 
-.project-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 5px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.project-link:hover {
-  background-color: #0056b3;
-}
 
 .project-item p {
   text-align: left;
@@ -74,21 +88,7 @@ body {
 
 }
 
-/* Tombol 'Lihat Selengkapnya' */
-.show-more-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 5px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
 
-.show-more-button:hover {
-  background-color: #0056b3;
-}
 
 /* Media Queries */
 

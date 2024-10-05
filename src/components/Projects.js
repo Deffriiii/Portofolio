@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import Slider from "react-slick"; // Import React Slick
+import Slider from 'react-slick'; // Import React Slick
 import website1 from '../assets/images/website1.png';
-import website2 from '../assets/images/website2.png'; // Gambar pertama proyek kedua
-import website2_1 from '../assets/images/website2_1.png'; // Gambar kedua proyek kedua
-import website2_2 from '../assets/images/website2_2.png'; // Gambar ketiga proyek kedua
+import website2 from '../assets/images/website2.png';
+import website2_1 from '../assets/images/website2_1.png';
+import website2_2 from '../assets/images/website2_2.png';
+import website3 from '../assets/images/website3.png';
+import website3_1 from '../assets/images/website3_1.png';
+import website3_2 from '../assets/images/website3_2.png';
 import '../styles/Projects.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = () => {
-  const [showMore, setShowMore] = useState(false);
-  const [showMore2, setShowMore2] = useState(false);
+  const [showMore, setShowMore] = useState({});
 
-  const handleShowMoreToggle = () => {
-    setShowMore(!showMore);
-  };
-
-  const handleShowMoreToggle2 = () => {
-    setShowMore2(!showMore2);
+  const handleShowMoreToggle = (index) => {
+    setShowMore((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   const truncateText = (text, numWords) => {
@@ -26,17 +24,32 @@ const Projects = () => {
     return words.slice(0, numWords).join(' ') + '...';
   };
 
-  const description1 = `Website ini merupakan platform pencari film yang dibangun menggunakan React JS,
-  dengan integrasi API dari IMDb untuk menyediakan informasi terbaru tentang film.
-  Pengguna dapat mencari film favorit, melihat detail seperti sinopsis, rating, dan poster,
-  serta menemukan film-film populer maupun terbaru dengan mudah. Desain yang responsif dan
-  antarmuka yang ramah pengguna membuat pengalaman pencarian film menjadi lebih cepat dan efisien.`;
+  const projects = [
+    {
+      title: 'Website Pencari Film',
+      description: `Website ini merupakan platform pencari film yang dibangun menggunakan React JS, 
+      dengan integrasi API dari IMDb untuk menyediakan informasi terbaru tentang film. 
+      Pengguna dapat mencari film favorit, melihat detail seperti sinopsis, rating, dan poster.`,
+      image: website1,
+      link: 'https://pencari-film.vercel.app/',
+    },
+    {
+      title: 'Anime Finder',
+      description: `AnimeFinder adalah platform web untuk memudahkan penggemar anime dalam menemukan 
+      dan menelusuri judul anime favorit mereka. Dengan integrasi API Jikan, data yang ditampilkan 
+      selalu akurat dan diperbarui.`,
+      images: [website2, website2_1, website2_2],
+      link: 'https://anime-finder-zeta.vercel.app/',
+    },
+    {
+      title: 'Dynamic Gallery',
+      description: `Dynamic Photo Gallery adalah web galeri interaktif yang dibangun dengan React JS, 
+      memungkinkan pengguna untuk menjelajahi, melihat detail, dan mengunduh foto-foto dari Unsplash API.`,
+      images: [website3, website3_1, website3_2],
+      link: 'https://dynamic-gallery-2gitfjone-defris-projects-bad56a0a.vercel.app/',
+    },
+  ];
 
-  const description2 = `AnimeFinder adalah platform web yang dibuat menggunakan React JS, dirancang untuk memudahkan penggemar anime dalam menemukan dan menelusuri judul anime favorit mereka. Website ini menawarkan fitur pencarian yang memungkinkan pengguna menemukan anime berdasarkan judul, lengkap dengan poster, durasi, dan sinopsis singkat. Dengan integrasi API Jikan, data yang ditampilkan selalu akurat dan diperbarui.
-
-Selain pencarian, AnimeFinder juga menampilkan daftar anime populer dan rekomendasi terbaru. Setiap anime dilengkapi dengan informasi detail seperti sinopsis, rating, dan tahun rilis. Antarmuka yang responsif.`;
-
-  // Konfigurasi slider untuk proyek kedua
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -44,86 +57,45 @@ Selain pencarian, AnimeFinder juga menampilkan daftar anime populer dan rekomend
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 3000,
   };
 
   return (
     <section className="projects">
       <h2>My Projects</h2>
       <ul className="project-list">
+        {projects.map((project, index) => (
+          <li className="project-item" key={index}>
+            <h3>{project.title}</h3>
 
-        {/* Proyek Pertama */}
-        <li className="project-item">
-          <h3>Website Pencari Film</h3>
-          <img 
-            src={website1} 
-            alt="Website Pencari Film" 
-            className="project-image"
-          />
-          <p>
-            {showMore ? description1 : truncateText(description1, 20)}
-          </p>
-          <button onClick={handleShowMoreToggle} className="show-more-button">
-            {showMore ? 'Lihat Lebih Sedikit' : 'Lihat Selengkapnya'}
-          </button>
-          <a 
-            href="https://pencari-film.vercel.app/" 
-            target="_blank"   
-            rel="noopener noreferrer" 
-            className="project-link"
-          >
-            Lihat Proyek
-          </a>
-        </li>
+            {project.images ? (
+              <Slider {...sliderSettings}>
+                {project.images.map((img, i) => (
+                  <div key={i}>
+                    <img src={img} alt={`${project.title} - Gambar ${i + 1}`} className="project-image" />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <img src={project.image} alt={project.title} className="project-image" />
+            )}
 
-        {/* Proyek Kedua */}
-        <li className="project-item">
-          <h3>Anime Finder</h3>
-
-          {/* Slider untuk proyek kedua */}
-          <Slider {...sliderSettings}>
-            <div>
-              <img 
-                src={website2} 
-                alt="Anime Finder - Gambar 1" 
-                className="project-image"
-              />
-            </div>
-            <div>
-              <img 
-                src={website2_1} 
-                alt="Anime Finder - Gambar 2" 
-                className="project-image"
-              />
-            </div>
-            <div>
-              <img 
-                src={website2_2} 
-                alt="Anime Finder - Gambar 3" 
-                className="project-image"
-              />
-            </div>
-          </Slider>
-
-          <p>
-            {showMore2 ? description2 : truncateText(description2, 20)}
-          </p>
-          <button onClick={handleShowMoreToggle2} className="show-more-button">
-            {showMore2 ? 'Lihat Lebih Sedikit' : 'Lihat Selengkapnya'}
-          </button>
-          <a 
-            href="https://anime-finder-zeta.vercel.app/" 
-            target="_blank"   
-            rel="noopener noreferrer" 
-            className="project-link"
-          >
-            Lihat Proyek
-          </a>
-        </li>
-
+            <p>
+              {showMore[index] ? project.description : truncateText(project.description, 20)}
+            </p>
+            <button onClick={() => handleShowMoreToggle(index)} className="show-more-button">
+              {showMore[index] ? 'Lihat Lebih Sedikit' : 'Lihat Selengkapnya'}
+            </button>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+              Lihat Proyek
+            </a>
+          </li>
+        ))}
       </ul>
 
-      <p><i>&copy; 2024 DefriPrasetyo. All rights reserved.</i></p>
+      <p>
+        <i>&copy; 2024 DefriPrasetyo. All rights reserved.</i>
+      </p>
     </section>
   );
 };
